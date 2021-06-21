@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Weather App</title>
+        <link rel="icon" href="icons/02d.png" type="image/png">
+        <link rel='stylesheet' href='style.css'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <script>
+            let autocomplete;
+            function initAutocomplete(){
+                autocomplete = new google.maps.places.Autocomplete(
+                    document.getElementById("autocomplete"),{
+                        types: ['establishment'],
+                        componentRestrictions: {'country':['AU']},
+                        fields: ['place_id', 'geometry', 'name']
+                    }
+                );
+                autocomplete.addListener('place_changed', onPlaceChanged);
+            }
+            function onPlaceChanged(){
+                var place = autocomplete.getPlace();
+
+                if(!place.geometry)
+                    document.getElementById("autocomplete").placeholder = 'Enter a place';
+                
+                else
+                    document.getElementById("details").innerHTML = place.name;
+            }
+        </script>
+    </head>
+    
+    <body>
+        <div class='main'>
+            <div class='search-input'>
+                <input type='text' class='input-box' id='input-box' placeholder='Enter City Name....' required>
+                <button type='submit' class='btn' id='btn'><i class='fa fa-search'></i></btn>
+            </div>
+            <div class='weather-body'>
+                <div class='location-details'>
+                    <div id='city' class='city'>Location</div>
+                    <div id='date' class='date'>Date</div>
+                </div>
+                <div class='weather-status'>
+                    <div class='temp' id='temp'>-- &deg; C</div><br>
+                    <div class='min-max' id='min-max'>--&deg; C (min) / --&deg; C (max)</div>
+                    <div class='weather-icon' id='weather-icon'><img src="icons/unknown.png" id='myicon' /></div>
+                    <div class='weather' id='weather'>Weather</div>
+                </div>
+            </div>
+        </div>
+
+        <script src='script.js'></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASuWjWEVk8t9pej45LT17GBEEbjElg5CQ&libraries=places&callback=initAutocomplete" async defer></script>
+    </body>
+
+</html>

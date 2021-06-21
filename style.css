@@ -1,0 +1,186 @@
+*{
+  box-sizing: border-box;
+  margin:0rem;
+  padding:0rem;
+}
+
+body{
+  background-image: url("images/default.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main{
+  width:30%;
+  padding: 3rem;
+  text-align: center;
+  background-color: rgb(240, 248, 255, 0.4);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 5rem;
+  display: block;
+  margin-top: 16rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80rem;
+}
+.main > *{
+  margin-bottom:3rem;
+}
+
+.search-input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-box{
+  margin: auto;
+  background-color: rgb(255, 255, 255, 0.7);
+  padding: 3rem 5rem;
+  border: none;
+  outline: none;
+  width: 90%;
+  color: #582233;
+  font-size: 5rem;
+  height: 9rem;
+  text-align: center;
+}
+
+.input-box:hover{
+  background-color: #ffffff;
+}
+
+.btn{
+  width: 8%;
+  color: #582233;
+  font-size: 5rem;
+  height: 9rem;
+  border: none;
+  background: none;
+}
+
+.btn:hover{
+  color: rgb(255, 255, 255);
+}
+
+.btn:active{
+  transform: skew(-30deg);
+}
+
+.weather-body{
+  color: #582233;
+  line-height: 90%;
+  padding: 3rem;
+  height: 62rem;
+  background-color: rgb(255, 255, 255, 0.7);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.location-details{
+  font-weight: 1000;
+  line-height: 90%;
+}
+
+.date{
+  padding-top: 2rem;;
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.weather-status{
+  padding: 4rem;
+  line-height: 60%;
+}
+
+.temp{
+  font-size: 10rem;
+  font-weight: 1000;
+  margin: 5rem 0;
+  text-shadow: 0.2rem 0.2rem rgb(0, 0, 0, 0.5);
+}
+
+.min-max{
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.weather{
+  font-size: 5rem;
+  font-weight: 900;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#myicon{
+  width: 10rem;
+}
+
+@media(max-width: 998px) {
+  html{ font-size:45%;}
+}
+
+@media(max-width: 768rem) {
+  html{ font-size:35%;}
+}
+
+/**********************************************************************************************/
+@media only screen and (min-width: 360px) and (max-width:814px) {
+
+  .main{
+    width:85%;
+    padding: 2rem 2rem;
+    font-size: 4rem;
+    margin-top: 4rem;
+    height: 63rem;
+  }
+  .main > *{
+    margin-bottom:1rem;
+  }
+
+  .input-box{
+    padding: 1rem;
+    font-size: 4rem;
+    height: 6rem;
+  }
+
+  .btn{
+    font-size: 4rem;
+    height: 6rem;
+  }
+
+  .weather-body{
+    padding: 1rem;
+    padding-top: 4rem;
+    height: 52rem;
+  }
+
+  .date{
+    font-size: 4rem;
+    padding-top: 1rem;
+  }
+
+  .weather-status{
+    padding: 2rem;
+    line-height: 60%;
+  }
+
+  .temp{
+    text-shadow: 0.4rem 0.4rem rgb(0, 0, 0, 0.5);
+  }
+
+  .min-max{
+    font-size: 3rem;
+  }
+
+  .weather{
+    font-size: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  #myicon{
+    width: 10rem;
+  }
+} 
